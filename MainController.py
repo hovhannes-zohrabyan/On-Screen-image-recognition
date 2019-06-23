@@ -3,7 +3,7 @@ import json
 import os, sys
 
 # User Modules
-import ManagingToolset
+import MainToolset
 
 
 # This function is reponsible for parsing and actioning the JSON that we get from server
@@ -90,13 +90,11 @@ def action_controller(json):
     images_set = json['images']
     accuracy = int(json['matching_accuracy'][:-1])/100
     app_path = json['app_path']
+    operations_list = json['operations']
 
     print(type(accuracy))
     #   Run the Application
-    ManagingToolset.run_application(app_path)
+    MainToolset.run_application(app_path)
 
-    #   Find Images
-    ManagingToolset.find_images_controller(images_set, accuracy)
-
-    #   Start Doing the required actions
-
+    #   Find Images and start doing the required actions
+    MainToolset.find_images_controller(images_set, accuracy, operations_list)

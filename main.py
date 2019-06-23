@@ -1,5 +1,5 @@
-import ActionController
+import MainController
 
 json = {}
 
-ActionController.action_controller(json)
+MainController.action_controller(json)
