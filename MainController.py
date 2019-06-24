@@ -92,7 +92,7 @@ def action_controller(json):
     app_path = json['app_path']
     operations_list = json['operations']
 
-    print(type(accuracy))
+    # print(type(accuracy))
     #   Run the Application
     MainToolset.run_application(app_path)
 

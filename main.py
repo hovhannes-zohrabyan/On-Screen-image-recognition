@@ -2,4 +2,6 @@ import MainController
 
 json = {}
 
-MainController.action_controller(json)
+
+def run(userId):
+    MainController.action_controller(json)

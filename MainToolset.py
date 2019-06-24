@@ -7,8 +7,7 @@ from image_search_module.imagesearch import *
 
 # TODO: Test on Ubuntu Based System
 def run_application(app_path):
-    want_run = 'ls'
-    os.system('bash -c ' + want_run)
+    os.system('bash -c ' + app_path)
 
 
 def find_images_controller(images_set, accuracy, operations_list):
