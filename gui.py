@@ -1,5 +1,5 @@
-import Tkinter as tk
-from Tkinter import *
+import tkinter as tk
+from tkinter import *
 
 # Developer Imports
 import main
