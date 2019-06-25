@@ -52,6 +52,6 @@ def autogui_controller(speciality_of_operation, action_data):
             if len(action_data['content'].split('+')) > 1:
                 controllers.KeyboardController.keyboard_press_combination(action_data['content'])
             else:
-                controllers.KeyboardController.keyboard_press_combination(action_data['content'])
+                controllers.KeyboardController.keyboard_press_single(action_data['content'])
 
 
