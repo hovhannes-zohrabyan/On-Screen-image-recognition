@@ -77,18 +77,19 @@ def action_controller(json):
     #         }
     #     ],
     #     "delay": "2",
-    #     "image_search_timeout": "30"
+    #     "image_search_timeout": "3"
     # }
     # json = {
     #     'error': 'MNA01'
     # }
 
     if 'error' in json:
-        print(json['error'])
-        sys.exit()
+        return json['error']
+        # sys.exit()
 
     images_set = json['images']
     accuracy = int(json['matching_accuracy'][:-1])/100
+    image_search_timeout = int(json['image_search_timeout'])
     app_path = json['app_path']
     operations_list = json['operations']
 
@@ -97,4 +98,4 @@ def action_controller(json):
     MainToolset.run_application(app_path)
 
     #   Find Images and start doing the required actions
-    MainToolset.find_images_controller(images_set, accuracy, operations_list)
+    MainToolset.find_images_controller(images_set, accuracy, image_search_timeout, operations_list)

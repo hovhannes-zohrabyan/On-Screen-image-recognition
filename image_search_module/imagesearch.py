@@ -123,12 +123,19 @@ returns :
 the top left corner coordinates of the element if found as an array [x,y] 
 
 '''
-def imagesearch_loop(image, timesample, precision=0.8):
+def imagesearch_loop(image, timesample, precision=0.8, image_search_timeout = 100):
+    start_time = time.process_time()
     pos = imagesearch(image, precision)
     while pos[0] == -1:
         print(image+" not found, waiting")
         time.sleep(timesample)
         pos = imagesearch(image, precision)
+        print(time.process_time() - start_time)
+        print(image_search_timeout)
+        print(time.process_time() - start_time > image_search_timeout)
+        if time.process_time() - start_time > image_search_timeout:
+            # break
+            return 'Not Found'
     return pos
 
 '''

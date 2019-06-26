@@ -1,16 +1,20 @@
 import MainController
 import requests
+import uuid
 
 
 def run(userId):
     # url = get_url_config()
-    userId = 'sunny'
-    mac_address = '00:0C:29:21:5C:D9'
+    mac_address = get_mac_address()
     params = {'userid': userId, 'mac_address': mac_address}
     r = requests.get(url='https://erp.suffescom.com/modules/access/api', params=params)
     json = r.json()
 
-    MainController.action_controller(json)
+    try:
+        result = MainController.action_controller(json)
+        return result
+    except Exception as _:
+        return "Something Gone Wrong!"
 
 
 def get_url_config():
@@ -18,3 +22,9 @@ def get_url_config():
     if f.mode == 'r':
         url = f.read()
         return url
+
+
+def get_mac_address():
+    mac_hex = iter(hex(uuid.getnode())[2:].zfill(12))
+    mac = ":".join(i + next(mac_hex) for i in mac_hex)
+    return mac
