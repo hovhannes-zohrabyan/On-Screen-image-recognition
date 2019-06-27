@@ -17,6 +17,8 @@ def run(userId):
 
     try:
         result = MainController.action_controller(json)
+        if result is None:
+            result = "Finished"
         return result
     except Exception as _:
         return "Something Gone Wrong!"

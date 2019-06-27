@@ -15,7 +15,7 @@ def button_call_back():
     #get the input
     user_id = myEntry.get()
     result = main.run(user_id)
-    messagebox.showinfo("Error", result)
+    messagebox.showinfo("Info", result)
     top.destroy()
     if user_id.strip() != "":
         print(user_id)
