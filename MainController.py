@@ -5,7 +5,6 @@ import os, sys
 # User Modules
 import MainToolset
 
-
 # This function is reponsible for parsing and actioning the JSON that we get from server
 def action_controller(json):
     # json = {

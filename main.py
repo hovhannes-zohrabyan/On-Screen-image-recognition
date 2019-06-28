@@ -20,8 +20,8 @@ def run(userId):
         if result is None:
             result = "Finished"
         return result
-    except Exception as _:
-        return "Something Gone Wrong!"
+    except Exception as e:
+        return e
 
 
 def get_url_config():

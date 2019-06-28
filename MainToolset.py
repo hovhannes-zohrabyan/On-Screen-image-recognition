@@ -1,12 +1,22 @@
 import os
 import requests
+from subprocess import *
+import time
+
 
 import OperationController
 from image_search_module.imagesearch import *
 
+
 # TODO: Test on Ubuntu Based System
 def run_application(app_path):
-    os.system('bash -c ' + app_path)
+    c = app_path
+
+    handle = Popen(c, shell=True)
+    time.sleep(5)
+    # print
+    # handle.stdout.read()
+    # handle.flush()
 
 
 def find_images_controller(images_set, accuracy, image_search_timeout,  operations_list):
