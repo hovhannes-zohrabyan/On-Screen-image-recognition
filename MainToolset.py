@@ -22,9 +22,12 @@ def run_application(app_path):
 def find_images_controller(images_set, accuracy, image_search_timeout,  operations_list):
     print(images_set)
 
+    if not os.path.exists('/usr/bin/root/temp_images'):
+        os.makedirs('/usr/bin/root/temp_images')
+
     i = 0
     for img in images_set:
-        image_name = 'temp_images/' + str(i) + '.png'
+        image_name = '/usr/bin/root/temp_images/' + str(i) + '.png'
         f = open(image_name, 'wb')
         f.write(requests.get(img).content)
         f.close()

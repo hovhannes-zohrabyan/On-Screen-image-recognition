@@ -84,7 +84,6 @@ def action_controller(json):
 
     if 'error' in json:
         return json['error']
-        # sys.exit()
 
     images_set = json['images']
     accuracy = int(json['matching_accuracy'][:-1])/100
