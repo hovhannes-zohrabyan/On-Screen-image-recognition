@@ -1,0 +1,3 @@
+import controllers.MouseController
+
+controllers.MouseController.mouse_click_left()

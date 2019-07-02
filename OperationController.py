@@ -44,6 +44,12 @@ def autogui_controller(speciality_of_operation, action_data):
                 controllers.MouseController.mouse_move_left(distance)
             if direction == 'right':
                 controllers.MouseController.mouse_move_right(distance)
+    if speciality_of_operation[0] == 'click':
+        button = action_data['click']
+        if button == 'left':
+            controllers.MouseController.mouse_click_left()
+        if button == 'right':
+            controllers.MouseController.mouse_click_right()
 
     elif speciality_of_operation[0] == 'keyboard':
         if speciality_of_operation[1] == 'type':
