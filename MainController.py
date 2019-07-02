@@ -91,7 +91,7 @@ def action_controller(json):
     image_search_timeout = int(json['image_search_timeout'])
     app_path = json['app_path']
     operations_list = json['operations']
-    delay = int(json['delay'])
+    delay = float(json['delay'])
 
     # print(type(accuracy))
     #   Run the Application
