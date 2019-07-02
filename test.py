@@ -1,3 +1,3 @@
-import controllers.MouseController
+import controllers.KeyboardController
 
-controllers.MouseController.mouse_click_left()
+controllers.KeyboardController.keyboard_press_single("Enter")

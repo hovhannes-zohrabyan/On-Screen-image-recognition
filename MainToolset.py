@@ -19,7 +19,7 @@ def run_application(app_path):
     # handle.flush()
 
 
-def find_images_controller(images_set, accuracy, image_search_timeout,  operations_list):
+def find_images_controller(images_set, accuracy, image_search_timeout, operations_list, delay):
     print(images_set)
 
     if not os.path.exists('/usr/bin/root/temp_images'):
@@ -35,7 +35,7 @@ def find_images_controller(images_set, accuracy, image_search_timeout,  operatio
         if response == 'Not Found':
             pass
         else:
-            make_actions(operations_list)
+            make_actions(operations_list, delay)
         i += 1
 
 
@@ -49,6 +49,8 @@ def find_image(image_name, accuracy, image_search_timeout):
 
 
 # TODO: Rename
-def make_actions(operations_list):
+def make_actions(operations_list, delay):
     for operation in operations_list:
         OperationController.make_action(operation)
+        time.sleep(delay)
+

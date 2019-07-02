@@ -6,6 +6,7 @@ def keyboard_type(text):
 
 
 def keyboard_press_single(button):
+    button = button.replace(' ', '').lower()
     pyautogui.press(button)
 
 
