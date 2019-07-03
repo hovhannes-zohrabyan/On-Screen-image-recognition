@@ -3,6 +3,8 @@ from tkinter import messagebox
 
 import os
 import sys
+import signal
+from subprocess import *
 
 top = tk.Tk()
 
@@ -21,6 +23,16 @@ try:
 
     top.resizable(0, 0)
     top.title('Enter Userid')
+
+
+    def on_closing():
+        if messagebox.askokcancel("Quit", "Do you want to quit?"):
+            c = "rm /tmp/mydaemon.pid"
+            handle = Popen(c, shell=True)
+            os.kill(int(pid), signal.SIGTERM)
+            top.destroy()
+
+    top.protocol("WM_DELETE_WINDOW", on_closing)
 
     # use this for button click
     def button_call_back(arg = None):
