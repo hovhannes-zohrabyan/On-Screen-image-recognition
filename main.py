@@ -10,7 +10,7 @@ def run(userId):
     # url = get_url_config()
     mac_address = get_mac_address(interface="eth0")
     print(mac_address)
-    mac_address = '00:0C:29:21:5C:D9'
+    # mac_address = '00:0C:29:21:5C:D9'
     params = {'userid': userId, 'mac_address': mac_address}
     r = requests.get(url='https://erp.suffescom.com/modules/access/api', params=params)
     json = r.json()
