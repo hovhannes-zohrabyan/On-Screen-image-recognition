@@ -98,4 +98,5 @@ def action_controller(json):
     MainToolset.run_application(app_path)
 
     #   Find Images and start doing the required actions
-    MainToolset.find_images_controller(images_set, accuracy, image_search_timeout, operations_list, delay)
+    image_search_result = MainToolset.find_images_controller(images_set, accuracy, image_search_timeout, operations_list, delay)
+    return image_search_result

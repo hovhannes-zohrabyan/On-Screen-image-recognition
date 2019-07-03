@@ -25,6 +25,8 @@ def find_images_controller(images_set, accuracy, image_search_timeout, operation
     if not os.path.exists('/usr/bin/root/temp_images'):
         os.makedirs('/usr/bin/root/temp_images')
 
+    result = "image_search_complete"
+
     i = 0
     for img in images_set:
         image_name = '/usr/bin/root/temp_images/' + str(i) + '.png'
@@ -33,10 +35,12 @@ def find_images_controller(images_set, accuracy, image_search_timeout, operation
         f.close()
         response = find_image(image_name, accuracy, image_search_timeout)
         if response == 'Not Found':
+            result= "image_search_complete_not_found"
             pass
         else:
             make_actions(operations_list, delay)
         i += 1
+    return result
 
 
 #TODO: Move to another controller

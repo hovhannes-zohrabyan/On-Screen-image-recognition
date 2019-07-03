@@ -17,8 +17,10 @@ def run(userId):
 
     try:
         result = MainController.action_controller(json)
-        if result is None:
+        if result is None or result == "image_search_complete":
             result = "Finished"
+        elif result == "image_search_complete_not_found":
+            result = "Please don't touch mouse/keyboard when app is running"
         return result
     except Exception as e:
         return e
