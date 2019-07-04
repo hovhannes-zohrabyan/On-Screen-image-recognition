@@ -8,6 +8,7 @@ import uuid
 def run(userId):
     # url = get_url_config()
     mac_address = get_mac_address()
+    mac_address = mac_address.upper()
     print(mac_address, '===============')
     # mac_address = '00:0C:29:21:5C:D9'
     params = {'userid': userId, 'mac_address': mac_address}
