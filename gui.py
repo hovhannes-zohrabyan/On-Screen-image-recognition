@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import PhotoImage
 
 import os
 import sys
@@ -7,7 +8,8 @@ import signal
 from subprocess import *
 
 top = tk.Tk()
-
+img = PhotoImage(file='icon.png')
+top.tk.call('wm', 'iconphoto', top._w, img)
 pid = str(os.getpid())
 print(pid)
 pidfile = "/tmp/mydaemon.pid"
